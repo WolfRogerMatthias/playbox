@@ -3,7 +3,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import styles from '../../styles/Home.module.css';
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
@@ -29,12 +28,12 @@ class Post extends React.Component {
         const { postData, mdxSource } = this.props;
         return (
             <Layout>
-                <article>
-                    <h1 className={styles.headingXl}>{postData.title}</h1>
-                    <div className={styles.lightText}>
+                <article className="max-w-3xl">
+                    <h1 className="text-4xl font-extrabold tracking-tight mb-2">{postData.title}</h1>
+                    <div className="text-gray-500 mb-8">
                         {postData.date}
                     </div>
-                    <div className={styles.content}>
+                    <div className="prose prose-lg max-w-none">
                         <MDXRemote {...mdxSource} />
                     </div>
                 </article>
@@ -44,3 +43,4 @@ class Post extends React.Component {
 }
 
 export default Post;
+
