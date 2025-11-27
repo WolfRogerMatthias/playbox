@@ -1,15 +1,14 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import styles from '../styles/Home.module.css';
 
 class Layout extends React.Component {
     render() {
         const { children } = this.props;
         return (
-            <div className={styles.container}>
+            <div className="min-h-screen flex flex-col">
                 <Header />
-                <main className={styles.main}>{children}</main>
+                <main className="flex-grow max-w-2xl mx-auto px-4 w-full mt-12 mb-24">{children}</main>
                 <Footer />
             </div>
         );
@@ -17,3 +16,4 @@ class Layout extends React.Component {
 }
 
 export default Layout;
+

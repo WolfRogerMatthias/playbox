@@ -4,18 +4,24 @@ import Link from 'next/link';
 class Header extends React.Component {
     render() {
         return (
-            <header style={{ padding: '20px 0', borderBottom: '1px solid #eaeaea' }}>
-                <nav>
-                    <Link href="/" style={{ marginRight: '20px', fontWeight: 'bold' }}>
-                        About Me
-                    </Link>
-                    <Link href="/blog">
-                        Blog
-                    </Link>
-                </nav>
+            <header className="w-full border-b border-gray-200 py-5">
+                <div className="max-w-2xl mx-auto px-4">
+                    <nav>
+                        <Link href="/" className="mr-5 font-bold hover:text-blue-600 transition-colors">
+                            About Me
+                        </Link>
+                        <Link href="/blog" className="mr-5 hover:text-blue-600 transition-colors">
+                            Blog
+                        </Link>
+                        <Link href="/log" className="hover:text-blue-600 transition-colors">
+                            Log
+                        </Link>
+                    </nav>
+                </div>
             </header>
         );
     }
 }
 
 export default Header;
+
