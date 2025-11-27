@@ -9,3 +9,8 @@ https://wolfrogermatthias.github.io/playbox/
  - [x] Blog search functionality
  - [x] Log system to track git commits
  
+## Work in progress
+ - [ ] Background styling
+ - [ ] Blog post styling
+ - [ ] Log system Styling (tree structure view)
+ 
