@@ -1,0 +1,1 @@
+export { getAppTheme } from './themeconfig.js';
