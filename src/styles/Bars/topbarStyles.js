@@ -5,6 +5,7 @@ export const topbarStyles = (theme) => ({
         width: '100vw',
         background: theme.palette.background.topBar,
         position: 'sticky',
+        top: 0,
         alignItems: 'center',
         gap: theme.spacing(1),
         justifyContent: 'center',

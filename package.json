@@ -21,6 +21,9 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
