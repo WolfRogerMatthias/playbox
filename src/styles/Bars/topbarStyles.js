@@ -2,9 +2,10 @@ export const topbarStyles = (theme) => ({
     bar: {
         display: "flex",
         height: '10vh',
-        width: '100vw',
+        width: '100%',
         background: theme.palette.background.topBar,
         position: 'sticky',
+        top: 0,
         alignItems: 'center',
         gap: theme.spacing(1),
         justifyContent: 'center',
