@@ -15,7 +15,7 @@ const TopBar = ({ toggleTheme }) => {
                 <button
                     key={route.path}
                     style={styles.btn}
-                    onClick={() => navigate(route.path)}
+                    onClick={() => navigate(route.path === '' ? '/' : route.path)}
                 >
                     {route.label}
                 </button>
