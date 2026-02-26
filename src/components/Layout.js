@@ -11,7 +11,7 @@ function Layout({ toggleTheme }) {
     return (
         <Box style={styles.container}>
             <TopBar toggleTheme={toggleTheme} />
-            <main>
+            <main style={{ flex: 1 }}>
                 <Outlet />
             </main>
         </Box>
