@@ -2,16 +2,14 @@ import React from 'react';
 import {useTheme} from "@mui/material";
 import {homeStyles} from "styles";
 
-function Home({toggleTheme}) {
+function Home() {
     const theme = useTheme();
     const styles = homeStyles(theme)
     return (
         <div style={styles.container}>
-            <button
-                onClick={toggleTheme}
-            >
-
-            </button>
+            <h1>
+                Home
+            </h1>
         </div>
     )
 }
