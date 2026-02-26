@@ -12,8 +12,5 @@ export const topbarStyles = (theme) => ({
     btn: {
         padding: theme.spacing(1, 1.5),
         cursor: 'pointer',
-        '&:hover': {
-            scale: 1.1
-        }
     }
 })
