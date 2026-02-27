@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material';
 import Markdown from 'react-markdown';
 import matter from 'gray-matter';
 import { blogStyles } from 'styles';
-import { posts } from 'posts';
+import { posts } from 'posts.js';
 
 function BlogPost() {
   const { slug } = useParams();

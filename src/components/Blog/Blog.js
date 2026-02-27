@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import matter from 'gray-matter';
 import { blogStyles } from 'styles';
-import { posts as postsList } from 'posts';
+import { posts as postsList } from 'posts.js';
 import PostCard from './PostCard';
 
 function Blog() {
