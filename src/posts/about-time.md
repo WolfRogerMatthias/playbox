@@ -2,10 +2,7 @@
 title: About Time this gets launched
 date: 2026-02-27
 tags: [personal, dev]
-excerpt: Finaly a good base for my Personal Webpage
 ---
-
-# About Time
 
 Fellow Reader this is my Personal Website i try write about things i learnd and did some reasearch about. In my personal time and other things.
 

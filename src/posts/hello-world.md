@@ -2,7 +2,6 @@
 title: Hello World
 date: 2026-02-27
 tags: [personal, intro]
-excerpt: Welcome to my blog — a place to share thoughts, experiments, and things I am learning.
 ---
 
 Welcome to my blog! This is the very first post — a place where I'll share thoughts, experiments, and things I'm learning.
