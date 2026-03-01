@@ -1,1 +1,1 @@
-export {homeStyles} from './homeStyles';
+export { homeStyles } from './homeStyles';

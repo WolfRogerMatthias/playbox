@@ -2,16 +2,16 @@ import React from 'react';
 import { useTheme } from '@mui/material';
 import { blogStyles } from 'styles';
 
-function PostCard({ post, onClick }) {
+function PostCard( { post, onClick } ) {
   const theme = useTheme();
   const styles = blogStyles(theme);
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = ( e ) => {
     e.currentTarget.style.transform = 'translateY(-4px)';
     e.currentTarget.style.boxShadow = theme.palette.shadows.cardHover;
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = ( e ) => {
     e.currentTarget.style.transform = 'translateY(0)';
     e.currentTarget.style.boxShadow = theme.palette.shadows.card;
   };
@@ -27,14 +27,14 @@ function PostCard({ post, onClick }) {
       <p style={styles.cardExcerpt}>{post.excerpt}</p>
       <div style={styles.cardMeta}>
         <span style={styles.cardDate}>
-          {new Date(post.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
+          {new Date(post.date).toLocaleDateString('de-CH', {
             day: 'numeric',
+            month: 'long',
+            year: 'numeric',
           })}
         </span>
         <div style={styles.tagRow}>
-          {post.tags.map((tag) => (
+          {post.tags.map(( tag ) => (
             <span key={tag} style={styles.tag}>
               {tag}
             </span>
