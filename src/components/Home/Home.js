@@ -65,17 +65,17 @@ function Home() {
           >
             <div style={styles.leftCol}>
               <div style={styles.date}>
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  month: 'short',
+                {new Date(post.date).toLocaleDateString('de-CH', {
                   day: 'numeric',
+                  month: 'short',
                   year: 'numeric',
                 })}
               </div>
-              <div style={styles.tagCol}>
-                {post.tags && post.tags.map(( tag ) => (
-                  <span key={tag} style={styles.sideTag}>
-                                        {tag}
-                                    </span>
+              <div style={styles.tagRow}>
+                {post.tags && post.tags.map((tag) => (
+                  <span key={tag} style={styles.tag}>
+                {tag}
+            </span>
                 ))}
               </div>
             </div>

@@ -1,32 +1,26 @@
-export const homeStyles = ( theme ) => ({
+export const homeStyles = (theme) => ({
   container: {
     background: theme.palette.background.default,
     minHeight: '100%',
     padding: theme.spacing(6, 3),
-    maxWidth: '800px', // Keeps the reading width comfortable
+    maxWidth: '800px',
     margin: '0 auto',
-  },
-  pageTitle: {
-    fontSize: '2rem',
-    fontWeight: 700,
-    marginBottom: theme.spacing(4),
-    color: theme.palette.text.primary,
   },
   list: {
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(6), // Space between different posts
+    gap: theme.spacing(6),
   },
   listItem: {
     display: 'flex',
     gap: theme.spacing(4),
     paddingBottom: theme.spacing(4),
-    borderBottom: `1px solid ${theme.palette.divider || '#e0e0e0'}`, // Subtle line between posts
+    borderBottom: `1px solid ${theme.palette.divider || '#e0e0e0'}`,
     cursor: 'pointer',
-    flexWrap: 'wrap', // Allows wrapping on very small mobile screens
+    flexWrap: 'wrap',
   },
   leftCol: {
-    width: '120px', // Fixed width for the date/tag column
+    width: '120px',
     flexShrink: 0,
     display: 'flex',
     flexDirection: 'column',
@@ -37,21 +31,28 @@ export const homeStyles = ( theme ) => ({
     color: theme.palette.text.primary,
     fontWeight: 500,
   },
-  tagCol: {
+  // NEW TAG STYLES:
+  tagRow: {
     display: 'flex',
-    flexDirection: 'column',
-    gap: theme.spacing(0.5),
-    alignItems: 'flex-start',
+    gap: theme.spacing(0.75),
+    flexWrap: 'wrap', // This ensures they move to the next row if there isn't enough space
   },
-  sideTag: {
-    fontSize: '0.85rem',
-    color: theme.palette.text.secondary,
+  tag: {
+    fontSize: '0.72rem',
+    fontWeight: 600,
+    padding: theme.spacing(0.25, 1),
+    borderRadius: '99px',
+    background: theme.palette.accent.chip,
+    color: theme.palette.accent.chipText,
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
   },
+  // END NEW TAG STYLES
   mainCol: {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(1.5), // Space between title and excerpt
+    gap: theme.spacing(1.5),
   },
   title: {
     fontSize: '1.6rem',
@@ -65,5 +66,5 @@ export const homeStyles = ( theme ) => ({
     color: theme.palette.text.secondary,
     lineHeight: 1.6,
     margin: 0,
-  },
+  }
 });

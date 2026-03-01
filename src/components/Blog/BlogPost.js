@@ -77,10 +77,10 @@ function BlogPost() {
       </h1>
       <div style={styles.postMeta}>
         <span>
-          {new Date(postData.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
+          {new Date(postData.date).toLocaleDateString('de-CH', {
             day: 'numeric',
+            month: 'long',
+            year: 'numeric',
           })}
         </span>
         <span>·</span>
