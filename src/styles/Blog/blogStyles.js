@@ -1,4 +1,4 @@
-export const blogStyles = (theme) => ({
+export const blogStyles = ( theme ) => ({
   page: {
     background: theme.palette.background.default,
     minHeight: '100%',

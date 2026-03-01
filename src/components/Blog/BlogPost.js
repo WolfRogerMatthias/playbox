@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material';
 import Markdown from 'react-markdown';
 import matter from 'gray-matter';
@@ -9,6 +9,7 @@ import { posts } from 'posts.js';
 function BlogPost() {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const theme = useTheme();
   const styles = blogStyles(theme);
 
@@ -17,8 +18,12 @@ function BlogPost() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Determine where to go back based on router state
+  const backUrl = location.state?.from || '/blog';
+  const backLabel = backUrl === '/' ? 'Home' : 'Blog';
+
   useEffect(() => {
-    const postEntry = posts.find((p) => p.slug === slug);
+    const postEntry = posts.find(( p ) => p.slug === slug);
 
     if (!postEntry) {
       setError('Post not found in index.');
@@ -27,18 +32,18 @@ function BlogPost() {
     }
 
     fetch(postEntry.fileUrl)
-      .then((res) => {
+      .then(( res ) => {
         if (!res.ok) throw new Error('Failed to load post content.');
         return res.text();
       })
-      .then((text) => {
+      .then(( text ) => {
         // Parse frontmatter
         const { data, content } = matter(text);
         setPostData(data);
         setContent(content);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(( err ) => {
         console.error(err);
         setError(err.message);
         setLoading(false);
@@ -48,24 +53,24 @@ function BlogPost() {
   if (loading)
     return (
       <div style={styles.postPage}>
-        <p>Loading...</p>
+        <p style={{ color: theme.palette.text.primary }}>Loading...</p>
       </div>
     );
 
   if (error)
     return (
       <div style={styles.postPage}>
-        <p>{error}</p>
-        <button style={styles.backBtn} onClick={() => navigate('/blog')}>
-          ← Back to Blog
+        <p style={{ color: theme.palette.text.primary }}>{error}</p>
+        <button style={styles.backBtn} onClick={() => navigate(backUrl)}>
+          ← Back to {backLabel}
         </button>
       </div>
     );
 
   return (
     <div style={styles.postPage}>
-      <button style={styles.backBtn} onClick={() => navigate('/blog')}>
-        ← Back to Blog
+      <button style={styles.backBtn} onClick={() => navigate(backUrl)}>
+        ← Back to {backLabel}
       </button>
       <h1 style={{ margin: '0 0 8px', color: theme.palette.text.primary }}>
         {postData.title}
@@ -81,7 +86,7 @@ function BlogPost() {
         <span>·</span>
         <div style={styles.tagRow}>
           {postData.tags &&
-            postData.tags.map((tag) => (
+            postData.tags.map(( tag ) => (
               <span key={tag} style={styles.tag}>
                 {tag}
               </span>

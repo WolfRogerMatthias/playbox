@@ -16,23 +16,27 @@ function Blog() {
   useEffect(() => {
     const fetchPosts = async () => {
       const loadedPosts = await Promise.all(
-        postsList.map(async (postItem) => {
+        postsList.map(async ( postItem ) => {
           const response = await fetch(postItem.fileUrl);
           const text = await response.text();
-          const { data } = matter(text);
+          const { data, content } = matter(text); // Grab 'content'
+
+          // Generate auto-excerpt
+          let autoExcerpt = content.split(/^##\s/m)[0];
+          autoExcerpt = autoExcerpt.replace(/^#\s+.*/m, '').trim();
+
           return {
             ...postItem,
-            ...data, // merge frontmatter into the post object
+            ...data,
+            excerpt: autoExcerpt, // Override frontmatter excerpt
           };
         }),
       );
 
-      // Sort posts by date, newest first
-      // Remove duplicates by slug just in case
       const uniquePosts = Array.from(
-        new Map(loadedPosts.map((post) => [post.slug, post])).values(),
+        new Map(loadedPosts.map(( post ) => [post.slug, post])).values(),
       );
-      uniquePosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      uniquePosts.sort(( a, b ) => new Date(b.date) - new Date(a.date));
 
       setPosts(uniquePosts);
       setLoading(false);
@@ -45,7 +49,7 @@ function Blog() {
     return (
       <div style={styles.page}>
         <h1 style={styles.pageTitle}>Blog</h1>
-        <p>Loading posts...</p>
+        <p style={{ color: theme.palette.text.primary }}>Loading posts...</p>
       </div>
     );
   }
@@ -54,11 +58,11 @@ function Blog() {
     <div style={styles.page}>
       <h1 style={styles.pageTitle}>Blog</h1>
       <div style={styles.grid}>
-        {posts.map((post) => (
+        {posts.map(( post ) => (
           <PostCard
             key={post.slug}
             post={post}
-            onClick={() => navigate(`/blog/${post.slug}`)}
+            onClick={() => navigate(`/blog/${post.slug}`, { state: { from: '/blog' } })}
           />
         ))}
       </div>
