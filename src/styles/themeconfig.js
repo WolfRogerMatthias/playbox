@@ -34,7 +34,7 @@ const warmDark = {
   },
 };
 
-export const getAppTheme = (mode) => {
+export const getAppTheme = ( mode ) => {
   const tokens = mode === 'light' ? warmLight : warmDark;
   return createTheme({
     palette: {

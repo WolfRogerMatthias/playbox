@@ -5,21 +5,21 @@ import { Blog, BlogPost } from './Blog';
 export const APP_ROUTES = [
   {
     path: '',
-    element: <Home />,
+    element: <Home/>,
     label: 'Home',
     showInMenu: true,
     index: true,
   },
   {
     path: '/blog',
-    element: <Blog />,
+    element: <Blog/>,
     label: 'Blog',
     showInMenu: true,
     index: false,
   },
   {
     path: '/blog/:slug',
-    element: <BlogPost />,
+    element: <BlogPost/>,
     label: null,
     showInMenu: false,
     index: false,
