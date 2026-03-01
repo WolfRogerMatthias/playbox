@@ -1,7 +1,7 @@
 export const topbarStyles = (theme) => ({
     bar: {
         display: "flex",
-        height: '10vh',
+        height: '5vh',
         width: '100%',
         background: theme.palette.background.topBar,
         position: 'sticky',
