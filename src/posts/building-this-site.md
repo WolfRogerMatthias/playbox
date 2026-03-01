@@ -2,7 +2,6 @@
 title: Building This Site
 date: 2026-02-27
 tags: [react, dev]
-excerpt: A quick rundown of how this personal site was built and the tech choices behind it.
 ---
 
 A quick rundown of how this personal site was built and why I made the choices I did.
