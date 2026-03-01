@@ -27,10 +27,10 @@ function PostCard( { post, onClick } ) {
       <p style={styles.cardExcerpt}>{post.excerpt}</p>
       <div style={styles.cardMeta}>
         <span style={styles.cardDate}>
-          {new Date(post.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
+          {new Date(post.date).toLocaleDateString('de-CH', {
             day: 'numeric',
+            month: 'long',
+            year: 'numeric',
           })}
         </span>
         <div style={styles.tagRow}>
