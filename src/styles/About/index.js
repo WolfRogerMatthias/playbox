@@ -1,0 +1,2 @@
+export { aboutStyles } from './aboutStyles';
+

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" style="display: block;">
+  <defs>
+    <style>
+      body { margin: 0; padding: 0; }
+    </style>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#e8d5b7"/>
+
+  <!-- Head -->
+  <circle cx="100" cy="65" r="32" fill="#c4704b"/>
+
+  <!-- Body/Shoulders -->
+  <path d="M 70 95 Q 70 105 80 115 L 120 115 Q 130 105 130 95 Z" fill="#c4704b"/>
+
+  <!-- Torso -->
+  <ellipse cx="100" cy="145" rx="38" ry="48" fill="#c4704b"/>
+</svg>
+
