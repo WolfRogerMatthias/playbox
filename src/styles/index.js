@@ -3,3 +3,4 @@ export * from './Home';
 export * from './Bars';
 export * from './layoutStyles';
 export * from './Blog';
+export * from './About';
